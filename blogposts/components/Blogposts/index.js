@@ -1,18 +1,17 @@
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: 'numeric', second: 'numeric'};
-    return new Date(dateString).toLocaleDateString('en-US', options);
-}
+import Link from "next/link";
 
-export default function Blogposts({ posts }) {
+export default function Blogposts({ posts, formatDate }) {
     return (
         <>
-        <ul>
+        <ul> 
             {posts.map((post) => (
-            <li key={post.id}>
-                <h2>{post.title}</h2>
-                <p>created on: {formatDate(post.created)}</p>
-                <p>Author: {post.author}</p>
+                <Link href={`/blog/${post.id}`}>
+                <li key={post.id}>
+                    <h2>{post.title}</h2>
+                    <p>created on: {formatDate(post.created)}</p>
+                    <p>Author: {post.author}</p>
                 </li>
+                </Link>
             ))}
         </ul>
         </>
