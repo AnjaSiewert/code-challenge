@@ -1,3 +1,4 @@
+import '../styles/global.css';
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
 
