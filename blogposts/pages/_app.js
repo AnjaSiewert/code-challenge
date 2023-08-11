@@ -19,6 +19,10 @@ export default function App({ Component, pageProps }) {
   if (isLoading) return <div>loading...</div>
 
   const selectedPost = Array.isArray(data) ? data.find(post => post.id === id) : data;
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: 'numeric', second: 'numeric'};
+    return new Date(dateString).toLocaleDateString('en-US', options);
+  }
 
   return (
     <>
@@ -26,7 +30,7 @@ export default function App({ Component, pageProps }) {
       {...pageProps} 
       posts={data}
       selectedPost={selectedPost}
-      
+      formatDate={formatDate}
       />
     </>
    );
