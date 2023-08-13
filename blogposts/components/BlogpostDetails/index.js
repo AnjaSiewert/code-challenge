@@ -14,6 +14,12 @@ function handleShareLink() {
     setTimeout(() => { setIsCopied(false)}, 3000);
 };
 
+function handleShareWhatsApp() { 
+    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
+    const shareText = `Check out this blogpost: ${selectedPost.title}`;
+    window.open(`whatsapp://send?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`);
+};
+
     return (
         <>
             <p>subtitle: {selectedPost.subtitle}</p>
@@ -21,8 +27,9 @@ function handleShareLink() {
             <p>created: {formatDate(selectedPost.created)}</p>
             <p>{selectedPost.content}</p>
             <p>Author: {selectedPost.author}</p>
-            {isCopied && <p>Link copied to clipboard</p>}
-            <button onClick={handleShareLink}>Share with friends</button>  
+            {isCopied && <p>Link copied to clipboard</p>}  
+            <button onClick={handleShareLink}>Share with friends</button>
+            <button onClick={handleShareWhatsApp}>Share via Whatsapp</button>
         </>
     );
 };
