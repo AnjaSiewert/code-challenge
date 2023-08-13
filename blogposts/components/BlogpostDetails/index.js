@@ -20,6 +20,12 @@ function handleShareWhatsApp() {
     window.open(`whatsapp://send?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`);
 };
 
+function handleShareMail() {
+    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
+    const shareText = `Check out this blogpost: ${selectedPost.title}`;
+    window.open(`mailto:?subject=${encodeURIComponent(shareText)}&body=${encodeURIComponent(shareUrl)}`);
+};
+
     return (
         <>
             <p>subtitle: {selectedPost.subtitle}</p>
@@ -30,6 +36,7 @@ function handleShareWhatsApp() {
             {isCopied && <p>Link copied to clipboard</p>}  
             <button onClick={handleShareLink}>Share with friends</button>
             <button onClick={handleShareWhatsApp}>Share via Whatsapp</button>
+            <button onClick={handleShareMail}>Share via Mail</button>
         </>
     );
 };
