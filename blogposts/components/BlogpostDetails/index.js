@@ -1,7 +1,19 @@
+import { useState } from "react";
+
 export default function BlogpostDetails ({selectedPost, formatDate}) {
     if(!selectedPost) {
         return <h2>is loading...</h2>
     } 
+
+    const [isCopied, setIsCopied] = useState(false);
+
+function handleShareLink() {
+    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
+    navigator.clipboard.writeText(shareUrl);
+    setIsCopied(true);
+    setTimeout(() => { setIsCopied(false)}, 3000);
+};
+
     return (
         <>
             <p>subtitle: {selectedPost.subtitle}</p>
@@ -9,6 +21,8 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
             <p>created: {formatDate(selectedPost.created)}</p>
             <p>{selectedPost.content}</p>
             <p>Author: {selectedPost.author}</p>
+            {isCopied && <p>Link copied to clipboard</p>}
+            <button onClick={handleShareLink}>Share with friends</button>  
         </>
     );
 };
