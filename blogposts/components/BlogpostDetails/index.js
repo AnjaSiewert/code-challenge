@@ -7,22 +7,20 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
 
     const [isCopied, setIsCopied] = useState(false);
 
+    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;   
+    const shareText = `Check out this blogpost: ${selectedPost.title}`;
+
 function handleShareLink() {
-    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
     navigator.clipboard.writeText(shareUrl);
     setIsCopied(true);
     setTimeout(() => { setIsCopied(false)}, 3000);
 };
 
 function handleShareWhatsApp() { 
-    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
-    const shareText = `Check out this blogpost: ${selectedPost.title}`;
     window.open(`whatsapp://send?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`);
 };
 
 function handleShareMail() {
-    const shareUrl = `${window.location.origin}/blog/${selectedPost.id}`;
-    const shareText = `Check out this blogpost: ${selectedPost.title}`;
     window.open(`mailto:?subject=${encodeURIComponent(shareText)}&body=${encodeURIComponent(shareUrl)}`);
 };
 
@@ -34,7 +32,7 @@ function handleShareMail() {
             <p>{selectedPost.content}</p>
             <p>Author: {selectedPost.author}</p>
             {isCopied && <p>Link copied to clipboard</p>}  
-            <button onClick={handleShareLink}>Share with friends</button>
+            <button onClick={handleShareLink}>Copy link to clipboard</button>
             <button onClick={handleShareWhatsApp}>Share via Whatsapp</button>
             <button onClick={handleShareMail}>Share via Mail</button>
         </>
