@@ -7,7 +7,6 @@ export default function App({ Component, pageProps }) {
  
   const router = useRouter();
   const { id } = router.query;
-  // console.log("router.query:",router.query);
 
   const { data, error, isLoading } = useSWR(
     id 
