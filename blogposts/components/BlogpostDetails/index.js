@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import ShareButtons from "../ShareButtons";
 
 const StyledImage = styled.img`
@@ -7,7 +7,15 @@ const StyledImage = styled.img`
 const StyledDiv = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;`;
+    ${(props) =>
+    props.buttonContainer &&
+    css`
+    flex-direction: column;  
+    align-items: center;  
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    `}
+    `;
 
 export default function BlogpostDetails ({selectedPost, formatDate}) {
     if(!selectedPost) {
@@ -16,14 +24,19 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
 
     return (
         <>
-            <p>Subtitle: {selectedPost.subtitle}</p>
+            <p>
+            <strong>Subtitle: </strong><br />
+            {selectedPost.subtitle}
+            </p>
             <StyledDiv>
             <StyledImage src={selectedPost.image} alt={selectedPost.title}/>
             </StyledDiv>
-            <p>Created: {formatDate(selectedPost.created)}</p>
+            <p><strong>Created: </strong><br/>{formatDate(selectedPost.created)}</p>
             <p>{selectedPost.content}</p>
-            <p>Author: {selectedPost.author}</p>
+            <p><strong>Author: </strong><br />{selectedPost.author}</p>
+            <StyledDiv buttonContainer>
             <ShareButtons selectedPost={selectedPost}/>
+            </StyledDiv>
         </>
     );
 };
