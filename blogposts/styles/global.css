@@ -35,8 +35,8 @@ li {
     background: #dfd6d6;
     border-radius: 10px;
     box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
-    padding: 0.1rem;
-    margin: 1.2rem 2.5rem;
+    padding: 1%;
+    margin: 3% 10% 0 10%;
 }
 
 li:hover {
