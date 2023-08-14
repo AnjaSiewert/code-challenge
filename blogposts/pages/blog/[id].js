@@ -9,7 +9,7 @@ export default function BlogpostDetailsPage ({selectedPost, formatDate}) {
     
     return (
         <>
-        <Link href="/">Back to Blog</Link>
+        <Link href="/">⬅ Back to Homepage</Link>
         <Header headline={selectedPost.title}/>
         <BlogpostDetails selectedPost={selectedPost} formatDate={formatDate}/>
         </>

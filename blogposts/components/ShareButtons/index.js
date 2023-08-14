@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StyledButton from "./ShareButtons";
 
 export default function ShareButtons ({selectedPost}) {
     const [isCopied, setIsCopied] = useState(false);
@@ -23,9 +24,9 @@ function handleShareMail() {
 return (
     <>  
        {isCopied && <p>Link copied to clipboard</p>}  
-            <button onClick={handleShareLink}>Copy link to clipboard</button>
-            <button onClick={handleShareWhatsApp}>Share via Whatsapp</button>
-            <button onClick={handleShareMail}>Share via Mail</button>
+            <StyledButton onClick={handleShareLink}>Copy link to clipboard</StyledButton>
+            <StyledButton onClick={handleShareWhatsApp}>Share via Whatsapp</StyledButton>
+            <StyledButton onClick={handleShareMail}>Share via Mail</StyledButton>
     </>
 );
 };
