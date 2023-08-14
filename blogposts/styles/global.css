@@ -6,6 +6,7 @@ body {
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 18px;
   text-align: center;
+  background: #d5dbe0;
 }
 
 * {
@@ -14,8 +15,8 @@ body {
 
 a {
   text-decoration: none;
-  color: #0070f3;
   cursor: pointer;
+  color: #000;
 }
 
 a:hover {
@@ -33,4 +34,13 @@ ul {
 
 li {
     list-style: none;
+    background: #e7e7e7;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    margin: 1rem;
+}
+
+li:hover {
+  filter: brightness(130%);
 }

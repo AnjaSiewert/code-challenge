@@ -16,11 +16,11 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
 
     return (
         <>
-            <p>subtitle: {selectedPost.subtitle}</p>
+            <p>Subtitle: {selectedPost.subtitle}</p>
             <StyledDiv>
             <StyledImage src={selectedPost.image} alt={selectedPost.title}/>
             </StyledDiv>
-            <p>created: {formatDate(selectedPost.created)}</p>
+            <p>Created: {formatDate(selectedPost.created)}</p>
             <p>{selectedPost.content}</p>
             <p>Author: {selectedPost.author}</p>
             <ShareButtons selectedPost={selectedPost}/>
