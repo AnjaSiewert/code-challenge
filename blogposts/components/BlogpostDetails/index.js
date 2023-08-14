@@ -1,27 +1,9 @@
-import styled, {css} from 'styled-components';
-import ShareButtons from "../ShareButtons";
 import { useState } from 'react';
+import ShareButtons from "../ShareButtons";
 import StyledButton from '../ShareButtons/ShareButtons';
-
-const StyledParagraph = styled.p`
-    margin: 2rem;
-`;
-
-const StyledImage = styled.img`
-    width: 50%;`;
-
-const StyledDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    ${(props) =>
-    props.$buttonContainer &&
-    css`
-    flex-direction: column;  
-    align-items: center;  
-    gap: 0.5rem;
-    margin: 3rem 0 1rem 0;
-    `}
-    `;
+import StyledParagraph from '../StyledParapraph';
+import StyledImage from '../StyledImage';
+import StyledDiv from "../StyledDiv";
 
 export default function BlogpostDetails ({selectedPost, formatDate}) {
     if(!selectedPost) {
