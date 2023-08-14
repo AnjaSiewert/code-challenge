@@ -1,6 +1,7 @@
 import styled, {css} from 'styled-components';
 import ShareButtons from "../ShareButtons";
 import { useState } from 'react';
+import StyledButton from '../ShareButtons/ShareButtons';
 
 const StyledImage = styled.img`
     width: 50%;`;
@@ -40,9 +41,9 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
             </StyledDiv>
             <p><strong>Created: </strong><br/>{formatDate(selectedPost.created)}</p>
             {fullContent ? <p>{selectedPost.content}</p> : <p>{selectedPost.content.substring(0, 500)}...</p>}
-            <button onClick={ShowFullContent}>
+            <StyledButton onClick={ShowFullContent}>
             {fullContent ? 'Show less' : 'Show more'}
-            </button>
+            </StyledButton>
             <p><strong>Author: </strong><br />{selectedPost.author}</p>
             <StyledDiv buttonContainer>
             <ShareButtons selectedPost={selectedPost}/>

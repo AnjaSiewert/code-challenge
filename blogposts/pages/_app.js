@@ -1,6 +1,9 @@
 import '../styles/global.css';
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
+import { Montserrat } from 'next/font/google'
+ 
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }) {
   const fetcher = (...args) => fetch(...args).then(res => res.json())
@@ -27,6 +30,11 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <style jsx global>{`
+        html {
+          font-family: ${montserrat.style.fontFamily};
+        }
+      `}</style>
       <Component 
       {...pageProps} 
       posts={data}
