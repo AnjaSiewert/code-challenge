@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
     display: flex;
     justify-content: center;
     ${(props) =>
-    props.buttonContainer &&
+    props.$buttonContainer &&
     css`
     flex-direction: column;  
     align-items: center;  
@@ -45,7 +45,7 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
             {fullContent ? 'Show less' : 'Show more'}
             </StyledButton>
             <p><strong>Author: </strong><br />{selectedPost.author}</p>
-            <StyledDiv buttonContainer>
+            <StyledDiv $buttonContainer>
             <ShareButtons selectedPost={selectedPost}/>
             </StyledDiv>
         </>
