@@ -3,6 +3,10 @@ import ShareButtons from "../ShareButtons";
 import { useState } from 'react';
 import StyledButton from '../ShareButtons/ShareButtons';
 
+const StyledParagraph = styled.p`
+    margin: 2rem;
+`;
+
 const StyledImage = styled.img`
     width: 50%;`;
 
@@ -15,7 +19,7 @@ const StyledDiv = styled.div`
     flex-direction: column;  
     align-items: center;  
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 3rem 0 1rem 0;
     `}
     `;
 
@@ -37,16 +41,16 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
             {selectedPost.subtitle}
             </p>
             <StyledDiv>
-            <StyledImage src={selectedPost.image} alt={selectedPost.title}/>
+                <StyledImage src={selectedPost.image} alt={selectedPost.title}/>
             </StyledDiv>
             <p><strong>Created: </strong><br/>{formatDate(selectedPost.created)}</p>
-            {fullContent ? <p>{selectedPost.content}</p> : <p>{selectedPost.content.substring(0, 500)}...</p>}
+            <p><strong>Author: </strong><br />{selectedPost.author}</p>
+            {fullContent ? <StyledParagraph>{selectedPost.content}</StyledParagraph> : <StyledParagraph>{selectedPost.content.substring(0, 500)}...</StyledParagraph>}
             <StyledButton onClick={ShowFullContent}>
             {fullContent ? 'Show less' : 'Show more'}
             </StyledButton>
-            <p><strong>Author: </strong><br />{selectedPost.author}</p>
             <StyledDiv $buttonContainer>
-            <ShareButtons selectedPost={selectedPost}/>
+                <ShareButtons selectedPost={selectedPost}/>
             </StyledDiv>
         </>
     );
