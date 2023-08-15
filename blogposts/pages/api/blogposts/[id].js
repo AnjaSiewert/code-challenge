@@ -5,8 +5,12 @@ export default function handler(req, res) {
 
     if(req.method === 'GET') {
         const post = blogposts.find((post) => post.id === id);
-        res.status(200).json(post);
+        if(!post) {
+            return res.status(404).json({message: 'Blogpost not found'});
     } else {    
         res.status(404).json({message: 'Blogpost not found'});
     }
+} else {
+    res.status(405).end();
+}
 };
