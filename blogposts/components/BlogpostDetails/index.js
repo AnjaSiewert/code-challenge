@@ -18,10 +18,10 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
 
     return (
         <>
-            <p>
+            <StyledParagraph>
             <strong>Subtitle: </strong><br />
             {selectedPost.subtitle}
-            </p>
+            </StyledParagraph>
             <StyledDiv>
                 <StyledImage src={selectedPost.image} alt={selectedPost.title}/>
             </StyledDiv>
