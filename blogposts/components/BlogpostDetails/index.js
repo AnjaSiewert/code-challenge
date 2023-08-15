@@ -27,7 +27,7 @@ export default function BlogpostDetails ({selectedPost, formatDate}) {
             </StyledDiv>
             <p><strong>Created: </strong><br/>{formatDate(selectedPost.created)}</p>
             <p><strong>Author: </strong><br />{selectedPost.author}</p>
-          {/*   {fullContent ? <StyledParagraph>{selectedPost.content}</StyledParagraph> : <StyledParagraph>{selectedPost.content.substring(0, 500)}...</StyledParagraph>} */}
+            {fullContent ? <StyledParagraph>{selectedPost.content}</StyledParagraph> : <StyledParagraph>{selectedPost.content.substring(0, 500)}...</StyledParagraph>}
             <StyledButton onClick={ShowFullContent}>
             {fullContent ? 'Show less' : 'Show more'}
             </StyledButton>

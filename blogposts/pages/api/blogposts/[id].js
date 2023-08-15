@@ -8,7 +8,7 @@ export default function handler(req, res) {
         if(!post) {
             return res.status(404).json({message: 'Blogpost not found'});
     } else {    
-        res.status(404).json({message: 'Blogpost not found'});
+        res.status(200).json(post);
     }
 } else {
     res.status(405).end();
