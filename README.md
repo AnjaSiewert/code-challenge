@@ -1,49 +1,34 @@
-# farbenmeer code challenge
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Create a react application which shows a list of blog posts and additionally a blog detail page for each post.
-You are free to choose the framework and tools yourself.
-We provide a REST API and a GraphQL API ready for you to consume. You decide which you want to use.
+## Getting Started
 
-# Goals 🏁
+First, run the development server:
 
-* Consume APIs and handle responses
-* Handle states
-* Handle routes between different pages
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-# Pre-requisites ✅
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Run the server
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-1. Checkout this repo
-2. Go to `server` directory
-3. Run `npm install`
-4. Run `npm run start`
-5. REST at: http://localhost:3001/rest GraphQL at: http://localhost:3001/graphql
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## REST API documentation
+## Learn More
 
-| Method 	| Path               	| Notes                   	|  
-|--------	|--------------------	|-------------------------	|
-| get    	| /rest/blogposts    	| Get all blogposts       	|
-| get    	| /rest/blogpost/:id 	| Get a specific blogpost 	| 
+To learn more about Next.js, take a look at the following resources:
 
-## GraphQL API documentation
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Go to http://localhost:3001/graphql and click on "Docs" in the upper right cornor.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Deploy on Vercel
 
-# Requirements 📖
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. There should be an overview page where the user can see all blog posts in short.
-2. If the user clicks on one blog post they should see the full blog post.
-3. The user should be able to send a link to a specific blog post to their friends.
-
-
-# Think about 💡
-
-There are no wrong choices! But keep in mind to argue later on why you have chosen the one or the other option.
-
-* If you feel comfortable try to use TypeScript. If not no worries this is not mandatory.
-* Using `npx create-react-app`, `npx create-next-app` or use your own?
-* How do you use versioning to let others follow your thoughts?
-* How do you ensure code quality?
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

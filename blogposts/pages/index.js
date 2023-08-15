@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 export default function Page({posts, formatDate}) {
   return (
   <>
-  <Header headline="Blogposts" />
+  <Header headline="Wanderlust chronicles" />
   <Blogposts posts={posts} formatDate={formatDate}/>
   </>
   )
