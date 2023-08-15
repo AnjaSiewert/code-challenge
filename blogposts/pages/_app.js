@@ -13,8 +13,8 @@ export default function App({ Component, pageProps }) {
 
   const { data, error, isLoading } = useSWR(
     id 
-    ? `http://localhost:3000/api/blogposts/${id}`
-    :'http://localhost:3000/api/blogposts', 
+    ? `/api/blogposts/${id}`
+    :'/api/blogposts', 
     fetcher
     );
  
